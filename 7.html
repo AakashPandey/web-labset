@@ -1,0 +1,50 @@
+<html>
+<body>
+    <form>
+        <input placeholder="Student Name"><br>
+        <input placeholder="Student USN"><br>
+        <input placeholder="Subject 1 marks"><br>
+        <input placeholder="Subject 2 marks"><br>
+        <input placeholder="Subject 3 marks"><br>
+        <input placeholder="Subject 4 marks"><br>
+        <input placeholder="Subject 5 marks"><br>
+        <input value="Total: " disabled><br>
+        <input value="Average: " disabled><br>
+        <input value="Grade: " disabled><br>
+        <input value="Result: " disabled><br>
+        <button type="button" onclick="calc()">Calculate</button>
+    </form>  
+</body>
+<script>                                                                                                                                                                                                                            
+   function calc() {
+    f = document.querySelector('form');
+    var total = 0;
+    for(i=2; i<7; i++) {
+        if(f[i].value>100||f[i].value===""||f[i]<=0){
+            alert("Invalid marks, try again");
+            break;
+        }
+        total+=parseInt(f[i].value);
+    }
+    avg = total/5;
+    f[7].value += total + "/500";
+    f[8].value += avg;
+    if(avg>75) {
+        f[9].value += "A+";
+        f[10].value += "Distinction";
+    } else if(avg>65) {
+        f[9].value += "A";
+        f[10].value += "First class";
+    } else if(avg>55) {
+        f[9].value += "B";
+        f[10].value += "Second class";
+    } else if(avg>45) {
+        f[9].value += "C";
+        f[10].value += "Pass";
+    } else {
+        f[9].value += "F";
+        f[10].value += "Fail";
+    }
+   }
+</script>
+</html>

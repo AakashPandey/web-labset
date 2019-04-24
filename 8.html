@@ -1,0 +1,32 @@
+<html>
+<body>
+    <form>
+        <input placeholder="Employee Name"><br>
+        <input placeholder="Designation"><br>
+        <input placeholder="Basic pay"><br>
+        <input value="DA " disabled><br>
+        <input value="HRA " disabled><br>
+        <input value="GP " disabled><br>
+        <input value="PF " disabled><br>
+        <input value="Deduction " disabled><br>
+        <input value="Net pay " disabled><br>
+        <button type="button" onclick="calc()">Calc</button>
+    </form>  
+</body>
+<script>
+   function pr(r) {
+       console.log(r.value.split(" "))
+       return parseInt(r.value.split(" ")[1]);
+   }                                                                                                                                                                                                    
+   function calc() {
+        f = document.querySelector('form');
+        bp = parseInt(f[2].value);
+        f[3].value += bp * 0.5;
+        f[4].value += bp * 0.5;
+        f[5].value += bp + pr(f[4]) + pr(f[3]);
+        f[6].value += pr(f[5]) * 0.02;
+        f[7].value += pr(f[6])*0.01;
+        f[8].value += pr(f[7]) + pr(f[6]);
+    }
+</script>
+</html>

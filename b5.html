@@ -1,0 +1,18 @@
+<html>
+<body>
+    <table id="res"></table>
+</body>
+<script>
+    r = prompt("Enter rows");
+    c = prompt("Enter columns");
+    s = "";
+    for(i=1; i<=r; i++) {
+        s += "<tr>"
+        for(j=1; j<=c; j++) {
+            s += `<td>${i*j}</td>`;
+        }
+        s+="</tr>";
+    }
+    document.getElementById("res").innerHTML = s;
+</script>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        td {
+            padding: 10px;
+            border: solid 1px #212121;
+        }
+    </style>
+</head>
+
+<body>
+    <table></table>
+</body>
+<script>
+    var t = ["Day/Time", "9", "10", "11", "BREAK", "1", "2"];
+    var d1 = ["MON", "WP", "WP", "TOC", "BREAK", "CNS", "CAIT"];
+    var d2 = ["WED", "CNS", "CAIT", "TOC", "BREAK", "WP", "WP"];
+    var d3 = ["FRI", "SP", "SP", "SP", "BREAK", "CNS", "CAIT"];
+    var tab = document.body.children[0];
+    function write(data, h) {
+        s = "<tr>";
+        if (h === 1) {
+            data.map((i, j) => {
+                s += `<td><b>${i}</b></td>`;
+            });
+        } else {
+            data.map((i, j) => {
+                (j === 0) ? s += `<td><b>${i}</b></td>` : s += `<td>${i}</td>`;
+            });
+        }
+        tab.innerHTML += s + "</tr>"
+    }
+    write(t, 1);
+    write(d1);
+    write(d2);
+    write(d3);
+</script>
+
+</html>

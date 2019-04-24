@@ -1,0 +1,13 @@
+<html lang="en">
+<body>
+    <input id="exprs" placeholder="Enter math expression" required><br>
+    <button onclick="calc()">Calc</button>
+    <div id="res"></div> 
+</body>
+<script>
+    function calc() {
+        exp = document.getElementById('exprs');
+        document.getElementById('res').innerHTML = eval(exp.value);
+    }
+</script>
+</html>

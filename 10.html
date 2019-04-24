@@ -1,0 +1,9 @@
+<html>
+<body>
+    <img src="a1.png" width="200" onmouseover="change(1)" onmouseout="change(0)">
+</body>
+<script>
+    i = document.body.children[0];
+    var change = (n) => (n===1)?i.src = "a1.png" : i.src = "a.png";
+</script>
+</html>

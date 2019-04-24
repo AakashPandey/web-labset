@@ -1,0 +1,32 @@
+<html>
+<body></body>
+<script>
+    m = ["Paneer Tikka Masala", "Dum Biryani", "Litti Chokha", "Chole Bhature", "Manchurian"];
+    s = ["Noodles", "Fries", "Burger", "Pakora", "Spring Roll"];
+    d = ["Sprite", "Coke", "Pepsi", "Fanta", "Limca"];
+    document.body.innerHTML += `<hr><h2>Main Course</h2>`;
+    m.map(i => {
+        document.body.innerHTML += `<input type="checkbox" onclick="add(this, 1)" value="${i}">${i}<br>`;
+    });
+    document.body.innerHTML += `<hr><h2>Starters</h2>`;
+    s.map(i => {
+        document.body.innerHTML += `<input type="checkbox" onclick="add(this, 1)" value="${i}">${i}<br>`;
+    });
+    document.body.innerHTML += `<hr><h2>Drinks</h2>`;
+    d.map(i => {
+        document.body.innerHTML += `<input type="radio" name="one" onclick="add(this, 2)" value="${i}">${i}<br>`;
+    });
+    document.body.innerHTML += `<hr><button onclick="add(null)">submit</button>`;
+    var dishes = [], drink;
+    function add(e, n) {
+        if (n === 1) {
+            (!e.checked) ? dishes = dishes.filter(i => i === e.value) : dishes.push(e.value);
+        } else if (n === 2) {
+            drink = e.value;
+        } else {
+            alert(`Dishes are ${dishes.toString()} & Drink is ${drink}`);
+        }
+    }
+</script>
+
+</html>

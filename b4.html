@@ -1,0 +1,16 @@
+<html>
+<body></body>
+<script>
+    var n = [10, 2, 3, 4, 9, 2, 11];
+    for(i=0; i<n.length; i++){
+        for(j=0; j<=(n.length-i)-1; j++) {
+            if(n[j]>n[j+1]){
+                t = n[j];
+                n[j] = n[j+1];
+                n[j+1] = t;
+            }
+        }
+    }
+    alert("Sorted array " + n.toString());
+</script>
+</html>

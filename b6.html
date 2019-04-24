@@ -1,0 +1,15 @@
+<html>
+<body>SkyClock</body>
+<script>
+    
+    function clock() {
+        d = new Date();
+        document.body.innerHTML = `${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`;
+    }
+
+    document.body.onload = function() {
+       a = setInterval(clock, 500);
+    }
+    
+</script>
+</html>
