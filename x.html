@@ -1,0 +1,22 @@
+<html>
+<body>
+  <input type="checkbox" onclick="add(this, 1)" value="Paneer">Paneer<br>;
+  <input type="checkbox" onclick="add(this, 1)" value="Pasta">Pasta<br>;      
+  <input type="radio" name="one" onclick="add(this, 2)" value="Pepsi">Pepsi<br>;
+  <input type="radio" name="one" onclick="add(this, 2)" value="Fanta">Fanta<br>;
+  <hr><button onclick="add(null)">submit</button>
+</body>
+<script>
+    var dishes = [], drink;
+    function add(e, n) {
+        if (n === 1) {
+            (e.checked) ? dishes.push(e.value) : null
+        } else if (n === 2) {
+            drink = e.value;
+        } else {
+            alert(`Dishes are ${dishes.toString()} & Drink is ${drink}`);
+        }
+    }
+</script>
+
+</html>
