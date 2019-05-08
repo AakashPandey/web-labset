@@ -20,7 +20,7 @@
     var dishes = [], drink;
     function add(e, n) {
         if (n === 1) {
-            (!e.checked) ? dishes = dishes.filter(i => i === e.value) : dishes.push(e.value);
+            (e.checked) ? dishes.push(e.value) : null
         } else if (n === 2) {
             drink = e.value;
         } else {
